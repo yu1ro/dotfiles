@@ -1,0 +1,1 @@
+/Users/yu1ro/.config/fisherman/fzf/conf.d/fzf.fish
