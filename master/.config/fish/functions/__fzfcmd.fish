@@ -1,1 +1,0 @@
-/Users/yu1ro/.config/fisherman/fzf/functions/__fzfcmd.fish

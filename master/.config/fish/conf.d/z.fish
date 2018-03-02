@@ -1,1 +1,0 @@
-/Users/yu1ro/.config/fisherman/z/conf.d/z.fish
