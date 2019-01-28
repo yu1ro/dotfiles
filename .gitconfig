@@ -1,5 +1,6 @@
 [user]
-        name = Yuichiro Kawano
+	name = yuichiro-kawano
+	email = yuichiro-kawano@navitime.co.jp
 [color]
         ui = auto
 [alias]
@@ -18,3 +19,6 @@
         default = current
 [core]
         editor = vim -c \"set fenc=utf-8\"
+	excludesfile = /Users/yuichiro-kawano/.gitignore_global
+[fetch]
+	prune = true
