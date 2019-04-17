@@ -6,11 +6,11 @@
 [alias]
         br = branch
         co = checkout
-        tr = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
+        si = switch
+        tr = log --graph --date=short --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
         ss = status
         in = commit
         logg = log --stat --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cr %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
-        his = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn%Cred%d %Creset%s'
         syncm = !git checkout master && git pull origin master && git fetch -p origin && git branch -d $(git branch --merged | grep -v master | grep -v develop | grep -v '*')	
         syncd = !git checkout develop && git pull origin develop && git fetch -p origin && git branch -d $(git branch --merged | grep -v master | grep -v develop | grep -v '*')
         today = "!sh -c 'git log --reverse --no-merges --branches=* --date=local --since=midnight --oneline --author=\"`git config --get user.name`\"'"
@@ -20,5 +20,15 @@
 [core]
         editor = vim -c \"set fenc=utf-8\"
 	excludesfile = /Users/yuichiro-kawano/.gitignore_global
+	autocrlf = input
 [fetch]
 	prune = true
+[lfs]
+	contenttype = 0
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[credential]
+	helper = osxkeychain
