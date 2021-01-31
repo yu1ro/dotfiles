@@ -1,6 +1,6 @@
 [user]
-	name = yuichiro-kawano
-	email = yuichiro-kawano@navitime.co.jp
+        name = Yuichiro Kawano
+	email = tresener.yu1ro@gmail.com
 [color]
         ui = auto
 [alias]
@@ -12,14 +12,13 @@
         in = commit
         logg = log --stat --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cr %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
         syncm = !git checkout master && git pull origin master && git fetch -p origin && git branch -d $(git branch --merged | grep -v master | grep -v develop | grep -v '*')	
-        syncd = !git checkout develop && git pull origin develop && git fetch -p origin && git branch -d $(git branch --merged | grep -v master | grep -v develop | grep -v '*')
+        syncd = !git checkout develop_community && git pull origin develop_community && git fetch -p origin && git branch -d $(git branch --merged | grep -v master | grep -v develop | grep -v '*')
         today = "!sh -c 'git log --reverse --no-merges --branches=* --date=local --since=midnight --oneline --author=\"`git config --get user.name`\"'"
 	sta = stash save -u
 [push]
-        default = current
+	default = current
 [core]
         editor = vim -c \"set fenc=utf-8\"
-	excludesfile = /Users/yuichiro-kawano/.gitignore_global
 	autocrlf = input
 [fetch]
 	prune = true
@@ -32,3 +31,5 @@
 	process = git-lfs filter-process
 [credential]
 	helper = osxkeychain
+[pull]
+	rebase = true
